@@ -35,6 +35,5 @@ let reject = function (array, cb) {
   return newArr;
 };
 
-console.log(reject(["breadth", "GRAPH", "depth", "height"], hasA)); // [ 'depth', 'height' ]
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = reject;
