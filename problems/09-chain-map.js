@@ -29,14 +29,22 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-let chainMap = function() {
+let chainMap = function (value, ...args) {
+  let result;
+  let i = 0;
 
+  while (i < args.length) {
+    let currentCb = args[i];
+    if (!result) {
+      result = currentCb(value);
+    } else {
+      result = currentCb(result);
+    }
+
+    i++;
+  }
+  return result;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = chainMap;
