@@ -27,14 +27,18 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
+let exactly = function (array, n, cb) {
+  const newArr = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let currentEl = array[i];
+    if (cb(currentEl)) {
+      newArr.push(currentEl);
+    }
+  }
+
+  return n === newArr.length;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = exactly;
