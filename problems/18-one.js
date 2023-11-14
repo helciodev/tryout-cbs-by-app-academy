@@ -37,14 +37,19 @@ let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
 console.log(result6);   // true
 *******************************************************************************/
 
-let one = function() {
+let one = function (array, cb) {
+  const newArr = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let currentEl = array[i];
+    let index = i;
+    if (cb(currentEl, index)) {
+      newArr.push(currentEl);
+    }
+  }
+
+  return newArr.length === 1;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = one;
