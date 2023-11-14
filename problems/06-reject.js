@@ -21,14 +21,20 @@ let hasA = function(s) {
 console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
 *******************************************************************************/
 
-let reject = function() {
+let reject = function (array, cb) {
+  const newArr = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let currentEl = array[i];
+
+    if (!cb(currentEl)) {
+      newArr.push(currentEl);
+    }
+  }
+
+  return newArr;
 };
 
-
-
-
-
-
+console.log(reject(["breadth", "GRAPH", "depth", "height"], hasA)); // [ 'depth', 'height' ]
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = reject;
