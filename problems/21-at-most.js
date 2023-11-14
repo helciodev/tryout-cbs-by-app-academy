@@ -5,7 +5,7 @@ at most (fewer than or equal to) `max` elements of the array that result in true
 when passed into the callback.
 
 Examples:
-
+ 
 let isPositive = function (n) {
     return n > 0;
 };
@@ -22,14 +22,17 @@ console.log(atMost(['boat', 'arc', 'cat', 'car', 'academy'], 1, startsWithA));  
 
 *******************************************************************************/
 
-let atMost = function() {
+let atMost = function (array, max, cb) {
+  const newArr = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let currentEl = array[i];
+
+    if (cb(currentEl)) newArr.push(currentEl);
+  }
+
+  return newArr.length <= max;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = atMost;
