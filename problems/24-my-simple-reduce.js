@@ -37,8 +37,8 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 let mySimpleReduce = function (array, cb) {
   let result;
 
+  let firstEl = array[0];
   for (let i = 1; i < array.length; i++) {
-    let firstEl = array[0];
     let currentEl = array[i];
 
     if (!result) {
